@@ -106,8 +106,11 @@ object ChallengeProblems {
     -Returns - Option[Int]
  */
 
-  def catsAgeOption(age: Option[Int]): Option[Int] = {
-
+  def catsAgeOption(anAge: Option[Int]): Option[Int] = {
+    anAge match {
+      case Some(anAge) => Some(anAge * 4)
+      case None => None
+    }
   }
 
   /*
@@ -116,19 +119,19 @@ object ChallengeProblems {
   Returns - Int
    */
 
+  def minimum(ints: List[Int]): Int = {
+    ints.min
+  }
+
   /*
   12. Same as question 11, but this time you are given a list of Option[Ints], returns the minimum of the Ints provided.
   If no ints are provided, return None.
  */
 
-
-
-
-
-
-
-
-
-
-
+  def minimumOption(intList: List[Option[Int]]): Option[Int] = {
+    intList match {
+      case intList.head => intList.min
+      case None => None // ?????
+    }
+  }
 }
